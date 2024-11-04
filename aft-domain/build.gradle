@@ -1,0 +1,31 @@
+
+dependencies {
+    // h2 의존성 추가
+    runtimeOnly 'com.h2database:h2'
+    // Spring Boot Web 의존성 추가
+    api 'org.springframework.boot:spring-boot-starter-web'
+    // jpa 의존성 추가
+    api 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // redis 의존성 추가
+    api 'org.springframework.boot:spring-boot-starter-data-redis'
+    // validation 의존성 추가
+    api 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+    api 'org.springframework.boot:spring-boot-starter-validation'
+
+    // querydsl 의존성 추가
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+}
+
+// querydsl generated 경로 설정
+def querydslDir = "build/generated/querydsl"
+
+tasks.withType(JavaCompile).configureEach {
+    options.generatedSourceOutputDirectory = file(querydslDir)
+}
+
+clean {
+    delete file(querydslDir)
+}

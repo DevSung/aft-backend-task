@@ -1,0 +1,10 @@
+dependencies {
+    implementation project(':aft-domain')
+    implementation project(':aft-auth')
+}
+
+springBoot {
+    mainClass = 'com.example.api.ApiApplication'
+}
+
+

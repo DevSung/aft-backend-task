@@ -1,0 +1,3 @@
+2024-11-04 01:14:52.662337+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]IF NOT EXISTS (SELECT 1 FROM ""user"" WHERE user_id = 'admin') THEN INSERT INTO ""user"" (user_id, password, name, reg_date) VALUES ('admin', '$2a$10$zeymu6LZY70/MzTVMa067OrNu5QDAuCV9IyM85oym8tO1D7Ke5xGW', '관리자', NOW())"; SQL statement:
+IF NOT EXISTS (SELECT 1 FROM "user" WHERE user_id = 'admin') THEN INSERT INTO "user" (user_id, password, name, reg_date) VALUES ('admin', '$2a$10$zeymu6LZY70/MzTVMa067OrNu5QDAuCV9IyM85oym8tO1D7Ke5xGW', '관리자', NOW()) [42000-224]

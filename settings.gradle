@@ -1,0 +1,5 @@
+rootProject.name = 'aft-backend-task'
+include 'aft-auth'
+include 'aft-domain'
+include 'aft-api'
+
